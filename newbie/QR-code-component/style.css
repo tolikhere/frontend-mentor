@@ -1,60 +1,110 @@
+/* ==========================================================================
+  1. VARIABLES & TYPOGRAPHY
+   ========================================================================== */
 :root {
   --white: hsl(0, 0%, 100%);
   --slate-300: hsl(212, 45%, 89%);
   --slate-500: hsl(216, 15%, 48%);
   --slate-900: hsl(218, 44%, 22%);
   --shadow: rgb(0, 0, 0, 0.1);
-  --content-width: 260px;
+
   font-family: "Outfit", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
 }
+
+/* ==========================================================================
+  2. GLOBAL RESETS
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+  3. LAYOUT SYSTEM
+   ========================================================================== */
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
-  font-weight: 400;
   background-color: var(--slate-300);
   margin: 0;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 16px;
 }
 
+/* ==========================================================================
+  4. QR COMPONENT
+   ========================================================================== */
+
 .qr-wrapper {
+  margin-top: auto;
   background-color: var(--white);
-  padding: 15px;
+  padding: 16px;
   text-align: center;
-  width: var(--content-width);
+  width: min(322px, 100%);
   border-radius: 20px;
   box-shadow: 0 10px 25px var(--shadow);
 
   .qr-img {
-    width: var(--content-width);
+    width: 100%;
     border-radius: 8px;
+    display: block;
   }
 
-  .title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--slate-900);
-  }
+  .qr-text {
+    width: 90%;
+    margin: 0 auto 24px;
 
-  .description {
-    color: var(--slate-500);
+    .title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+
+    .description {
+      color: var(--slate-500);
+    }
   }
 }
 
+/* ==========================================================================
+  5. FOOTER / ATTRIBUTION
+   ========================================================================== */
+
 .attribution {
-  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-top: auto;
   font-size: 0.6875rem;
   color: var(--slate-900);
-  bottom: 0.4rem;
-  left: 50%;
-  translate: -50%;
-  white-space: nowrap;
+  text-align: center;
 
   a {
+    color: inherit;
     text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+/* ==========================================================================
+  6. RESPONSIVE MEDIA QUERY
+   ========================================================================== */
+
+@media (min-width: 24rem) {
+  .attribution {
+    flex-direction: row;
+    gap: 0.5rem;
   }
 }
