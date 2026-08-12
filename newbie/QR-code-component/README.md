@@ -13,8 +13,8 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
   - [AI Collaboration](#ai-collaboration)
+  - [Refactoring](#refactoring)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -87,6 +87,16 @@ And yes it made a good point about my CSS styling at list e.g:
 So later I will make refactoring of my original solution with AI assistance.
 
 The main point is I got the result without AI and I'm proud of it. Actually it help to learn even more.
+
+### Refactoring
+
+After I've got an AI review from Frontend Mentor I've made these changes:
+
+- Made the text for the `alt` attribute more appropriate.
+- Made the font size responsive by swap `px` units to `rem` units.
+- Used the `min-width: 100vh` instead of the fix `width: 100vh`.
+- Made the image responsive by using `100%` instead the fix width.
+- Removed the absolute positioning from the footer and used Flexbox combined with the `margin-top: auto` to move it to the bottom of the screen.
 
 ## Author
 
